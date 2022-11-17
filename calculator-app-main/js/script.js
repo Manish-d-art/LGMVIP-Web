@@ -15,7 +15,7 @@ const currentOperationText = document.querySelector('.current-operand');
 //sounds
 const switchThemeAudio = new Audio('https://www.fesliyanstudios.com/play-mp3/641');
 const btnAudio = new Audio();
-btnAudio.src="/assets/sounds/button-sound-numpad.wav";
+btnAudio.src="/calculator-app-main/assets/sounds/button-sound-numpad.wav";
 
 const totalSwitches = switchOpts.length;
 let currSwitch = 1;
