@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [ solution URL here](https://github.com/Manish-d-art/Calculator-App.git)
+- Solution URL: [ solution URL here](https://github.com/Manish-d-art/LGMVIP-Web.git)
 - Live Site URL: [ live site URL here](https://calculator-app-d-art.netlify.app)
 
 ## My process
