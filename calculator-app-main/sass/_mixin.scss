@@ -1,0 +1,160 @@
+@use 'variables' as var;
+
+@mixin setColors($bgColor,$headerTextColor,$toggleBg,$screenBg,$mainBg,$numsAndOpBg,$numsAndOpShadow,$delAndResetBg,$delAndResetShadow,$eqlsBg,$eqlsShadow){
+  
+  .calc,.attribution{
+    background-color:$bgColor;
+  }
+
+  .calc__container-logo,.labels,.calc__theme{
+    color: $headerTextColor;
+  }
+
+  .calc__header-btns{
+    background-color:$mainBg !important;
+  }
+
+  .toggleBtn{
+    background-color: $eqlsShadow !important;
+    &:hover{
+      background-color: $eqlsBg !important;
+    }
+  }
+
+  .calc__display{
+    background-color: $screenBg;
+  }
+
+  .calc__numberContainer{
+    background-color: $mainBg !important;
+  }
+
+  .numsAndOperators{
+    background-color: $numsAndOpBg !important;
+    box-shadow: 0 4px 0 0.2px $numsAndOpShadow !important;
+    &:hover{
+			filter: brightness(125%) !important;
+
+    }
+    &:active {
+			filter: brightness(150%) !important;
+			transform: translateY(4px) !important;
+			box-shadow: none !important;
+		}
+  }
+
+  .delBtn, .resetBtn{
+    background-color: $delAndResetBg !important;
+    box-shadow: 0 4px 0 0.2px $delAndResetShadow !important;
+    &:hover{
+			filter: brightness(125%) !important;
+    }
+    &:active {
+			filter: brightness(125%) !important;
+			/* Key pressed effect */
+			transform: translateY(4px) !important;
+			box-shadow: none !important;
+		}
+
+  }
+
+  .equalesBtn{
+    background-color:$eqlsBg !important;
+    box-shadow: 0 4px 0 0.2px $eqlsShadow !important;
+    &:hover{
+      filter: brightness(125%) !important;
+			
+    }
+    &:active {
+			filter: brightness(125%) !important;
+			/* Key pressed effect */
+			transform: translateY(4px) !important;
+			box-shadow: none !important;
+		}
+  }
+  
+}
+.theme0{
+  @include setColors(var.$Verydarkdesaturatedblue1,
+  var.$White, 
+  var.$Verydarkdesaturatedblue2,
+  var.$Verydarkdesaturatedblue3,
+  var.$Verydarkdesaturatedblue2,
+  var.$Lightgrayishorange,
+  var.$Grayishorange,
+  var.$Desaturateddarkblue1,
+  var.$Desaturateddarkblue2,
+  var.$Red,
+  var.$Darkred
+  );
+
+  .equalesBtn{
+    color:var.$White !important;
+  }
+
+  .delBtn, .resetBtn{
+    color:var.$White !important;
+  }
+  .previous-operand, .current-operand{
+    color:var.$White !important;
+  }
+
+}
+
+.theme1{
+  @include setColors(var.$Lightgray,
+  var.$Verydarkgrayishyellow,
+  var.$Grayishred,
+  var.$Verylightgray,
+  var.$Grayishred,
+  var.$Lightgrayishyellow,
+  var.$Darkgrayishorange,
+  var.$Darkmoderatecyan,
+  var.$Verydarkcyan,
+  var.$Orange ,
+  var.$Darkorange
+  );
+
+  .delBtn,.resetBtn{
+    color:var.$White !important;
+  }
+
+  .equalesBtn{
+    color:var.$White !important;
+  }
+  .previous-operand, .current-operand{
+    color:var.$Verydarkgrayishyellow !important;
+  }
+
+}
+
+.theme2{
+  @include setColors(var.$Verydarkviolet1,
+  var.$Lightyellow ,
+  var.$Purecyan ,
+  var.$Verydarkviolet2 ,
+  var.$Verydarkviolet2 ,
+  var.$Veryarkviolet ,
+  var.$Darkmagenta ,
+  var.$Darkviolet,
+  var.$Vividmagenta,
+  var.$Purecyan,
+  var.$Softcyan
+  );
+
+  .delBtn, .resetBtn{
+    color:var.$White !important;
+  }
+
+  .equalesBtn{
+    color:var.$Verydarkblue !important;
+  }
+
+  .numsAndOperators{
+    color: var.$Lightyellow !important;
+  }
+  .previous-operand, .current-operand{
+    color:var.$Lightyellow !important;
+  }
+
+}

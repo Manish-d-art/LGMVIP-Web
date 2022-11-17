@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="/sass/main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Calculator app</title>
+  <script defer src="/js/script.js"></script>
+</head>
+<body class="theme0">
+<main class="calc">
+  <div class="calc__container">
+    <div class="calc__container-header">
+      <h1 class="calc__container-logo">calc</h1>
+      <div class="calc__header-themeContainer">
+        <p class="calc__theme">theme</p>
+        <div class="calc__header-btns">
+            <input type="radio" data-index="0" class="btnOptions" id="btn1" name="button-1" value="30">
+            <label class="labels"  for="btn1">1</label><br>
+            <input type="radio" data-index="1" class="btnOptions" id="btn2" name="button-2" value="60">
+            <label class="labels"  for="btn2">2</label><br>  
+            <input type="radio" data-index="2" class="btnOptions" id="btn3" name="button-3" value="100">
+            <label class="labels" for="btn3">3</label>
+            <button class="toggleBtn" type="button">??</button>
+        </div>
+      </div>
+    </div>
+    <div class="calc__display output">
+     <div class="previous-operand"></div>
+     <div class="current-operand"></div>
+    </div>
+    <div class="calc__numberContainer">
+      <div class="row-1 rows">
+        <button class="seven keyStyle numsAndOperators numBtn">7</button>
+        <button class="eight keyStyle numsAndOperators numBtn">8</button>
+        <button class="nine keyStyle numsAndOperators numBtn">9</button>
+        <button class="delete keyStyle delBtn">DEL</button>
+      </div>
+
+      <div class="row-2 rows">
+        <button class="four keyStyle numsAndOperators numBtn">4</button>
+        <button class="five keyStyle numsAndOperators numBtn">5</button>
+        <button class="six  keyStyle numsAndOperators numBtn">6</button>
+        <button class="add  keyStyle plusBtn numsAndOperators operationBtn">+</button>
+      </div>
+
+      <div class="row-3 rows">
+        <button class="one keyStyle numsAndOperators numBtn">1</button>
+        <button class="two keyStyle numsAndOperators numBtn">2</button>
+        <button class="three  keyStyle numsAndOperators numBtn">3</button>
+        <button class="subtract  keyStyle negBtn numsAndOperators operationBtn">-</button>
+      </div>
+
+      <div class="row-4 rows">
+        <button class="deci keyStyle numsAndOperators numBtn">.</button>
+        <button class="zero keyStyle numsAndOperators numBtn">0</button>
+        <button class="division  keyStyle numsAndOperators operationBtn">/</button>
+        <button class="multiply  keyStyle  numsAndOperators operationBtn">*</button>
+      </div>
+
+      <div class="row-5 ">
+        <button class="resetBtn keyStyle">RESET</button>
+        <button class="equalesBtn keyStyle">=</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+  
+  <footer class="attribution">
+    Coded by <a href="#">Manish</a>.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+@use 'mixin';
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'League Spartan', sans-serif;
+  .calc{
+    padding:1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   .calc__container{
+      padding: 1.5rem;
+      width: min(589px,100%);
+      .calc__container-header{
+        display: flex;
+        justify-content: space-between;
+
+        .calc__container-logo{
+          font-size: 2rem;
+        }
+        .calc__header-themeContainer{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 125px;
+
+          .calc__theme{
+            font-size:.7rem;
+            text-transform: uppercase;
+          }
+          .calc__header-btns{
+            all: unset;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            border-radius:30px;
+            position: relative;
+            height: 15px;
+            width: 55px;
+            padding: .3rem;
+
+            input[type=radio]{
+              opacity: 0;
+              cursor: pointer;
+              height: 17px;
+              width: 17px;
+              -webkit-tap-highlight-color: transparent;
+            }
+            input{
+              cursor: pointer;
+            }
+            .labels{
+              position: relative;
+              transform: translate(-10px,-23px);
+              font-size: .9rem;
+            }
+
+            .toggleBtn{
+              all:unset;
+              font-size: 0;
+              height:17px;
+              width:17px;
+              border-radius: 50%;
+              position: absolute;
+              cursor: pointer;
+              transition:all 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+          }
+        }
+      }
+      .calc__display{
+        width: 100%;
+        height: clamp(89px,20vw,120px);
+        margin: 2rem 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap: break-word;
+        border-radius: 15px;
+        word-wrap: break-word;
+        word-break: break-all;
+        .previous-operand{
+          color: white;
+          font-size: 1.5rem;
+          overflow: hidden;
+        }
+        .current-operand{
+          color: white;
+          font-size: 2.5rem;
+          overflow: hidden;
+        }
+      }
+      .calc__numberContainer{
+        padding: 1.6rem 1.3rem;
+        border-radius: 10px;
+
+        
+        .rows{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1.25rem;
+
+          .keyStyle{
+            all: unset;
+            width: min(110px,22%);
+            height: 70px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: clamp(2.1rem, 1.81425rem + 1.27vw, 2.6rem);
+            &:hover{
+              cursor: pointer;
+            }
+
+            @media (min-width:772px) {
+              height: 62px !important;
+              border-radius: 10px;
+            }
+          }
+          .delBtn{
+            font-size: 1.3rem ;
+          }
+          
+        }
+        .row-5{
+          display: flex;
+          justify-content: space-between;
+
+          .resetBtn,.equalesBtn{
+            all: unset;
+            width: min(239px,48%);
+            text-align: center;
+            height: 70px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            &:hover{
+              cursor: pointer;
+            }
+            @media (min-width:772px) {
+              height: 60px !important;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+   }
+  }
+}
+
+.attribution { font-size: 15px;
+   text-align: center;
+   padding-bottom: 2rem;
+   color: brown;
+   a { 
+    color: hsl(228, 45%, 44%);
+  }
+  }
+// .attribution a { color: hsl(228, 45%, 44%);}
