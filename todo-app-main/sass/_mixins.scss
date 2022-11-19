@@ -1,0 +1,119 @@
+@use 'variables' as var;
+
+@mixin setColors($bodyBg,$taskListBg,$inputTaskClr,$TodoStatusBg,$TaskTextclr,$borderClr,$hoverClr) {
+  background-color: $bodyBg;
+
+  .Todo__text {
+    background-color: $taskListBg
+  }
+
+  #TodoTextInput {
+    background-color: $taskListBg;
+    color: $inputTaskClr;
+  }
+
+  .Todo-list-cont {
+    background-color: $taskListBg;
+    border-bottom: 1px solid $borderClr;
+  }
+
+  .Todo-info-mob {
+    background-color: $taskListBg;
+  }
+
+  .Todo-status-container {
+    background-color: $taskListBg;
+    color:$TodoStatusBg;
+
+    .Todo-status {
+      button{
+        &:active {
+          color:$hoverClr !important;
+        }
+        @media (min-width:992px) {
+          &:hover {
+            color:$hoverClr !important;
+          }
+        }
+      }
+    }
+  }
+
+  .clear-item {
+    &:active {
+      color:$hoverClr !important;
+    }
+    @media (min-width:992px) {
+      &:hover {
+        color:$hoverClr !important;
+      }
+    }
+  }
+
+  .Todo-task {
+    color:$TaskTextclr;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $taskListBg;
+  }
+
+}
+
+.theme1{
+  @include setColors(var.$Very-Dark-Blue,
+  var.$Very-Dark-Desaturated-Blue,
+  var.$Light-Grayish-Blue,
+  var.$Very-Dark-Grayish-Blue1,
+  var.$Light-Grayish-Blue,
+  var.$Very-Dark-Grayish-Blue2,
+  var.$Light-Grayish-Blue-hover,
+  );
+
+  #TodoTextInput {
+    caret-color: white !important;
+  }
+  
+
+  .Todo__header {
+    background-image: url('/assets/images/bg-mobile-dark.jpg');
+    @media (min-width:600px) {
+      background-image: url('/assets/images/bg-desktop-dark.jpg');
+    }
+  }
+
+  .check-logo-cont , .check-logo-cont-top {
+    border: 1px solid var.$Very-Dark-Grayish-Blue2 !important;
+  }
+  
+
+}
+
+
+
+.theme2 {
+@include setColors(var.$Very-Light-Grayish-Blue,
+var.$Very-Light-Gray ,
+var.$Very-Dark-Grayish-Blue ,
+var.$Dark-Grayish-Blue,
+var.$Very-Dark-Grayish-Blue ,
+var.$Light-Grayish-Blue ,
+var.$Very-Dark-Grayish-Blue
+ );
+
+ #TodoTextInput {
+  caret-color: black !important;
+}
+
+  .Todo__header {
+    background-image: url('/assets/images/bg-mobile-light.jpg');
+    @media (min-width:600px) {
+      background-image: url('/assets/images/bg-desktop-light.jpg');
+    }
+  }
+
+  .check-logo-cont , .check-logo-cont-top {
+    border: 1px solid hsl(237deg 8% 66%) !important;
+  }
+
+}

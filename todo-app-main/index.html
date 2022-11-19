@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="/sass/main.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  
+  <title>Todo app</title>
+  <script defer src="/js/index.js"></script>
+</head>
+<body class="theme1">
+<main class="Todo">
+  <h1 class="heading">Todo-App</h1>
+  <div class="Todo__header"></div>
+  <div class="Todo__container">
+    <div class="themeIndicator">
+      <p class="themIndicator__1">
+        <span class="a">toggle theme</span>
+      </p>
+      <p class="themIndicator__2"></p>
+    </div>
+   
+    <div class="Todo__head">
+      <p class="Todo-logo">todo</p>
+      <button class="logo">
+        <img class="sun-logo" src="/assets/images/icon-sun.svg" alt="sun-logo">
+        <img class="moon-logo" src="/assets/images/icon-moon.svg" alt="moon-logo">
+      </button>
+    </div>
+    <div class="Todo__text">
+      <button class="check-logo-cont-top"><strong class="addTask">add</strong></button>
+      <form>
+        <label for="TodoTextInput"></label>
+        <input type="text" id="TodoTextInput" name="TodoText" autocomplete="off" placeholder="Create a new todo..." autofocus>
+      </form>
+    </div>
+    <div class="Todo-container__overflow">
+      <div class="Todo-task__container">
+      </div>
+      <div class="Todo-info-mob">
+        <p class="total-items-left"></p>
+        <button class="clear-item">Clear Completed</button>
+      </div>
+      <div class="Todo-status-container">
+        <p class="total-items-left"></p>
+        <div class="Todo-status">
+          <button class="All-status active">All</button>
+          <button class="Active-status">Active</button>
+          <button class="Completed-status">Completed</button>
+        </div>
+        <button class="clear-comp-status clear-item">Clear Completed</button>
+      </div>
+    </div>
+    <div class="todoBaseContainer">
+      <p class="codeByContainer">Coded by <a href="https://github.com/Manish-d-art">Manish</a></p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

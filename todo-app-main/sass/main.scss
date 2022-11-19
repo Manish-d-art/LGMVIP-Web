@@ -1,0 +1,467 @@
+@use 'variables' as var;
+@use 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  overflow: hidden;
+}
+body{
+  transition: all 0.4s ease;;
+  height: auto;
+}
+::-webkit-scrollbar {
+  width: 2px;   // for vertical scroll bar
+  height: 0px;  // for horizontal scroll bar
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+//hidden font size 0
+.heading {
+  font-size: 0;
+}
+
+.Todo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .Todo__header {
+      background-repeat: no-repeat;
+      background-size: min(100%, 608px) 300px;
+      width: 100%;
+      height: 220px;
+      @media (min-width:600px) {
+        background-size: cover !important;
+        height: 290px !important;
+      }
+    }
+   
+    .Todo__container {
+      position: relative;   
+      display: flex;    
+      flex-direction: column;
+
+      top: -11rem;
+      width:min(600px,85%);
+      .themeIndicator {
+        opacity:0;
+        position: absolute;
+        align-self: flex-end;
+        margin-right: 1.7rem;
+        width: 135px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .7rem;
+        @media (min-width:360px) {
+          transform: translateX(-30px);
+          
+        }
+        
+        .themIndicator__1 {
+          background-color: white;
+            transform: translatex(17.8px);
+            position: relative;
+            z-index: 2;
+            border-radius: 5px;
+          .a{
+            border-radius: 3px;
+            display: inline-block;
+            width: 84px;
+            text-align: center;
+            height: 2rem;
+            background-color: red;
+            padding-top: 0.7rem;
+            background-image: linear-gradient(to right bottom, #57ddff, #c058f3) !important;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-weight: 900;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        .themIndicator__2 {
+          background-color: red;
+            background-color: white;
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            position: relative;
+            transform: rotate(45deg);
+            border-radius: 2px;
+        }
+        
+      }
+      @media (min-width:600px) {
+      top: -12rem;
+      }
+      .Todo__head {
+        display: flex;
+        justify-content: space-between; 
+
+        .Todo-logo {
+          color: white;
+          text-transform: uppercase;
+          letter-spacing: 8px;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
+        .logo {
+          all: unset;
+          .moon-logo{
+            display: none;
+          }
+        }
+
+      }
+      .Todo__text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        margin: 2rem 0 1.5rem 0;
+        width: 100%;
+        padding: .3rem 1rem;
+
+        .check-logo-cont-top {
+          all: unset;
+          -webkit-tap-highlight-color: transparent;
+          cursor: pointer;
+          border-radius: 50%;
+          text-align: center;
+          // @media (min-width:500px) {
+            flex-basis: 33px !important;
+            width: 31px !important;
+            height: 31px !important;
+            
+          // }
+          &:active {
+            border: 1px solid cyan !important;
+            cursor: pointer;
+          }
+          @media (min-width:992px) {
+            &:hover {
+              border: 1px solid cyan !important;
+              cursor: pointer;
+            }
+          }
+         
+
+          .addTask{
+            font-size: .7rem;
+            background-image: linear-gradient(to right bottom,#57ddff,#c058f3) !important;
+            background-clip: text;
+            color: inherit;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+          }
+        }
+
+        form{
+          padding-left: 1rem;
+          width: 96%;
+          #TodoTextInput {
+            flex-basis: calc(100% - 40px);
+            padding: 1rem 0rem;
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            width: 100%;
+            ::placeholder {
+              color: var.$Dark-Grayish-Blue;
+            }
+          }
+        }
+       
+      
+      }
+      .Todo-container__overflow {
+        border-radius:5px ;
+
+        .Todo-task__container {
+          overflow: scroll;
+          height: 0%;
+          max-height: 42vh;
+
+          @media (min-width:600px) {
+           height: 0% !important;
+           max-height: 50vh;
+          }
+          
+          .Todo-list-cont {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .3rem 1rem;
+            cursor: grab;
+            
+            @media (min-width:600px) {
+            padding: .53rem 1rem !important;
+            }
+              &:hover,&:active{
+                .cross-logo {
+                display: block !important;
+                cursor: pointer;
+            }
+            }
+            
+            .Todo-list-sub-cont {
+              display: flex;
+              align-items: center;
+              flex-basis: 80%;
+
+              .cont {
+                width: 36px;
+                @media (min-width:500px) {
+                width: 31px !important;
+                }
+                .check-logo-cont {
+                  all: unset;
+                  -webkit-tap-highlight-color: transparent;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-basis: 20px;
+                  width: 23px;
+                  height: 23px;
+                  border-radius: 50%;
+                  background-image: none;
+                  @media (min-width:500px) {
+                    width: 25px !important;
+                    height: 25px !important;
+                  }
+
+                  &:active {
+                    border: 1px solid cyan !important;
+                    cursor: pointer;
+                  }
+                  @media (min-width:992px) {
+                    &:hover {
+                      border: 1px solid cyan !important;
+                      cursor: pointer;
+                    }
+                  }
+
+                  .check-logo {
+                    display: none;
+                  }
+
+                }
+              }
+
+              .Todo-task {
+                padding: 0.8rem 0 0.8rem 1.1rem;
+                font-size: 1rem;
+                width: clamp(187px,66vw,387px);
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+          }
+            .cross-logo-cont{
+              all: unset;
+              -webkit-tap-highlight-color: transparent;
+              width: 25px;
+              flex-basis: 25px;
+              .cross-logo {
+                text-align: end;
+                display: none;
+                @media (max-width:992px) {
+                  display: block;
+                }
+              }
+            }
+
+           
+          
+        }
+       
+      }
+      .Todo-info-mob {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 1rem;
+        font-size: .8rem;
+          .total-items-left {
+            color: var.$Very-Dark-Grayish-Blue1;
+          }
+          .clear-item {
+            all: unset;
+            color: var.$Very-Dark-Grayish-Blue1;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        @media (min-width:600px) {
+          display: none;
+        }
+      }
+
+      .Todo-status-container {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem 1rem;
+        margin-top:1rem;
+        font-size: .8rem;
+        justify-content: center;
+
+        @media (min-width:600px) {
+        justify-content: space-between !important;
+        margin-top: 0;
+        }
+
+        .Todo-status {
+          display: flex;
+          justify-content: space-evenly;
+          font-weight: 600;
+
+          .All-status {
+            all: unset;
+            -webkit-tap-highlight-color: transparent;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .Active-status {
+            all: unset;
+            -webkit-tap-highlight-color: transparent;
+            margin: 0 1rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          .Completed-status {
+            all: unset;
+            -webkit-tap-highlight-color: transparent;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+         
+        }
+        .total-items-left {
+          display: none;
+          @media (min-width:600px) {
+            display: block !important;
+          }
+         }
+
+         .clear-comp-status {
+          all: unset;
+          -webkit-tap-highlight-color: transparent;
+          display: none;
+          &:hover {
+            cursor: pointer;
+          }
+            @media (min-width:600px) {
+              display: block !important;
+            }
+          }
+        }
+      
+
+    }
+    .todoBaseContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-block: .8rem;
+      line-height: 1.5;
+     
+       .dragDrop, .codeByContainer {
+        color:  var.$Very-Dark-Grayish-Blue1;
+        font-size: .8rem;
+       a {
+        &:active {
+          color: hsl(341, 65%, 39%);
+        }
+        @media (min-width:992px) {
+          &:hover {
+            color: hsl(341, 65%, 39%);
+          }
+        }
+       }
+      }
+      .codeByContainer  {
+        font-size: .9rem;
+        font-weight: 700;
+       }
+    }
+
+  }
+
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+//js events classes
+.logo-toggle {
+  .sun-logo {
+    display: none;
+  }
+  .moon-logo {
+    display: block !important;
+  }
+}
+
+// check logo
+.check-logo-cont-toggle {
+  background-image: var.$Check-Background !important;
+
+  .check-logo {
+    display: block !important;
+  }
+}
+
+//task complete
+.complete {
+  text-decoration: line-through;
+  color: gray !important;
+}
+
+//active 
+.active {
+  color: var.$Bright-Blue !important;
+}
+
+// information footer
+.hideInfoContainer {
+  opacity: 0;
+  transition: .4s;
+}
+.displayInfoContainer {
+  opacity: 1;
+  transition: .4s;
+}
+.Todo-info-mob-toggle {
+  @media (min-width:600px) {
+    display: flex !important;
+    
+  }
+}
+
+//theme indicating 
+.themeHide {
+  opacity: 0 !important;
+  transition: 2s all;
+}
+.themeDisplay {
+  opacity: 1 !important;
+  transition: 2s all;
+}
