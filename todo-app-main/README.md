@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://github.com/Manish-d-art/Todo-App.git)
-- Live Site URL: [live site URL here](https://todo-app-d-art.netlify.app)
+- Solution URL: [solution URL here](https://github.com/Manish-d-art/LGMVIP-Web.git)
+- Live Site URL: [live site URL here](https://todo-app-lgm-manish-d-art.netlify.app)
 
 ## My process
 
@@ -43,7 +43,6 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - javaScript
 
